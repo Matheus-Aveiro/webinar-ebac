@@ -1,0 +1,72 @@
+[
+  {
+    "key": 1,
+    "colaborador": "Gol D. Roger",
+    "cpf": "13046626088",
+    "indicacao": "Rei dos Piratas",
+    "telefone": "77777777777",
+    "email": "golroger@onepiece.com",
+    "competencia": "Pirata",
+    "ramal": "101",
+    "cargo": "Rei dos Piratas"
+  },
+  {
+    "key": 2,
+    "colaborador": "Monkey D. Luffy",
+    "cpf": "5362195085",
+    "indicacao": "Filho de Gol D. Roger",
+    "telefone": "11111111111",
+    "email": "luffy@onepiece.com",
+    "competencia": "Pirata",
+    "ramal": "102",
+    "cargo": "Capitão dos Chapéus de Palha"
+  },
+  {
+    "key": 3,
+    "colaborador": "Roronoa Zoro",
+    "cpf": "19725821009",
+    "indicacao": "Espadachim Imbatível",
+    "telefone": "52352352352",
+    "email": "zoro@onepiece.com",
+    "competencia": "Espadachim",
+    "ramal": "103",
+    "cargo": "Espadachim dos Chapéus de Palha",
+    "parent": 2
+  },
+  {
+    "key": 4,
+    "colaborador": "Nami",
+    "cpf": "2824805013",
+    "indicacao": "A Melhor Navegadora",
+    "telefone": "33333333333",
+    "email": "nami@onepiece.com",
+    "competencia": "Navegação",
+    "ramal": "104",
+    "cargo": "Navegadora dos Chapéus de Palha",
+    "parent": 3
+  },
+  {
+    "key": 5,
+    "colaborador": "Usopp",
+    "cpf": "49940485093",
+    "indicacao": "Mentiroso Honrado",
+    "telefone": "44444444444",
+    "email": "usopp@onepiece.com",
+    "competencia": "Atirador",
+    "ramal": "105",
+    "cargo": "Atirador dos Chapéus de Palha",
+    "parent": 3
+  },
+  {
+    "key": 6,
+    "colaborador": "Sanji",
+    "cpf": "85902987016",
+    "indicacao": "O Cozinheiro Perfeito",
+    "telefone": "55555555555",
+    "email": "sanji@onepiece.com",
+    "competencia": "Cozinheiro",
+    "ramal": "106",
+    "cargo": "Cozinheiro dos Chapéus de Palha",
+    "parent": 3
+  }
+]
