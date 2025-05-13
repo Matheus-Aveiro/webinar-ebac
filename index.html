@@ -1,399 +1,148 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		/>
+		<link rel="icon" href="img/logoItajai.png" type="image/png" />
+		<title>Organograma Institucional</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="icon" href="img/logoItajai.png" type="image/png">
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- jQuery -->
+		<script src="js/jquery-3.7.1.min.js"></script>
 
-    <!-- Jquery Core Js -->
-    <script src="js/jquery-3.7.1.min.js"></script>
+		<!-- Organograma -->
+		<script src="js/go.js"></script>
+		<script src="js/DataInspector.js"></script>
+		<script src="js/gojs-config.js"></script>
 
-    <!-- Organograma -->
-    <script src="js/go.js"></script>
-    <script src="js/DataInspector.js"></script>
-    <script src="js/gojs-config.js"></script>
+		<link rel="stylesheet" href="css/custom.css" />
+	</head>
 
-    <title>Organograma Institucional</title>
-    
-    <!-- Modal Style -->
-    <link rel="stylesheet" href="css/modal.css">
+	<body>
+		<!-- Modal -->
+		<div id="modal-container">
+			<div class="modal-background">
+				<div class="modal">
+					<h2>Roronoa Zoro?</h2>
+					<p>Buscando informações? Se perdeu mesmo com um mapa na mão?</p>
+					<svg
+						class="modal-svg"
+						xmlns="http://www.w3.org/2000/svg"
+						width="100%"
+						height="100%"
+						preserveAspectRatio="none"
+					>
+						<rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+					</svg>
+				</div>
+			</div>
+		</div>
 
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-            background-color: #f3f4f6;
-            /* fundo geral */
-            color: black;
-            font-family: 'Segoe UI', sans-serif;
-        }
-    
-        .container-fluid {
-            height: 100%;
-            width: 100%;
-            padding: unset;
-        }
-    
-        .dark-panel {
-            background-color: #f3f4f6;
-            padding: 15px 0;
-            text-align: center;
-            color: black;
-            height: 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-    
-        .dark-btn {
-            background-color: #ffffff;
-            color: black;
-            border-radius: 10px;
-            margin: 0 8px;
-            padding: 10px 18px;
-            transition: background-color 0.3s ease, transform 0.2s;
-            border: 1px solid #bebebe;
-        }
-    
-        .dark-btn.search {
-            width: 70%;
-            color: black;
-            text-align: center;
-            opacity: 1;
-        }
-    
-        .dark-btn:hover {
-            background-color: #f3f4f6;
-            color: black;
-            border-color: black;
-            transform: scale(1.03);
-            cursor: pointer;
-        }
-    
-        .iframe-container {
-            height: 84%;
-            padding: 32px;
-            text-align: center;
-            background-color: #dbe2f4;
-            display: flex;
-            justify-content: center;
-        }
-    
-        .iframe-container div {
-            width: 90%;
-            height: 100%;
-            border: none;
-            border-radius: 16px;
-            background-color: #f3f4f6;
-        }
-    
-        .iframe-container div div {
-            display: none;
-        }
-    
-        .dark-btn i,
-        .dark-panel .glyphicon {
-            color: black;
-        }
-    
-        .container-fluid.dark-panel>div {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-        }
-    
-        input[type="text"]::placeholder {
-            color: black;
-            font-weight: 500;
-        }
-    
-        #searchForm .form-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-    
-        #searchForm .form-group>div,
-        #searchForm .form-group>label {
-            flex: 1;
-            min-width: 200px;
-        }
-    
-        .panel-left,
-        .panel-center,
-        .panel-right {
-            display: flex;
-            align-items: center;
-        }
-    
-        .panel-left {
-            flex: 1;
-            justify-content: flex-start;
-        }
-    
-        .panel-left img {
-            border-radius: 8px;
-        }
-    
-        .panel-center {
-            flex: 2;
-            justify-content: center;
-            gap: 10px;
-        }
-    
-        .panel-right {
-            flex: 1;
-        }
-    
-        input::-webkit-input-placeholder {
-            color: black;
-            text-align: center;
-        }
-    
-        input:-moz-placeholder {
-            color: black;
-            text-align: center;
-        }
-    
-        input::-moz-placeholder {
-            color: black;
-            text-align: center;
-        }
-    
-        input:-ms-input-placeholder {
-            color: black;
-            text-align: center;
-        }
-    
-        .dark-btn i {
-            font-size: 20px;
-        }
-    
-        .user-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-    
-        .user-btn {
-            padding: 10px 14px;
-            border-radius: 50%;
-        }
-    
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 56px;
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            min-width: 160px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            text-align: left;
-            padding: 10px;
-            height: auto;
-            flex-direction: column;
-            align-items: center;
-            white-space: nowrap;
-        }
-    
-    
-        .dropdown-menu .username {
-            margin: 0;
-            padding: 8px 10px;
-            font-weight: bold;
-            color: black;
-        }
-    
-        .logout-btn {
-            width: 100%;
-            margin-top: 8px;
-            padding: 8px 10px;
-            font-size: 14px;
-        }
-    
-        a.btn.dark-btn {
-            display: flex;
-            text-align: center;
-            text-decoration: none;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-    
-</head>
+		<!-- Header -->
+		<div class="header container-fluid">
+			<div class="row">
+				<!-- Esquerda -->
+				<div class="col-sm-4 text-center">
+					<img
+						src="img/logoItajai.png"
+						alt="Logo de Itajaí"
+						aria-label="Logo da prefeitura de Itajaí"
+					/>
+					<span class="h4">Organograma Institucional</span>
+				</div>
 
-<body>
+				<!-- Centro -->
+				<div class="col-sm-4 text-center panel-search">
+					<input
+						type="text"
+						class="form-control search"
+						placeholder="Pesquisar"
+						aria-label="Pesquisar no organograma"
+					/>
+				</div>
 
-<!-- Modal -->
-<div id="modal-container">
-    <div class="modal-background">
-        <div class="modal">
-            <h2>Lorem Ipsum</h2>
-            <p>amet dolorem set etsu me.</p>
-            <svg class="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                preserveAspectRatio="none">
-                <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-            </svg>
-        </div>
-    </div>
-</div>
+				<!-- Direita -->
+				<div class="col-sm-4 text-center">
+					<div class="dropdown user-dropdown">
+						<button
+							id="userToggle"
+							class="btn btn-default btn-lg dropdown-toggle"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+							title="Usuário"
+						>
+							<span class="glyphicon glyphicon-user"></span>
+						</button>
+						<ul id="dropdownMenu" class="dropdown-menu dropdown-menu-right">
+							<li class="username text-center"><strong>Matheus Aveiro</strong></li>
+							<li><a class="btn btn-default logout-btn" href="#">Voltar para Intranet</a></li>
+							<li><a class="btn btn-default logout-btn" href="#">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<!-- Painel Superior de Controles -->
-<div class="container-fluid dark-panel" style="padding: 20px;">
+		<!-- Corpo (Organograma) -->
+		<main class="container-fluid iframe-container">
+			<div class="iframe" id="myDiagramDiv"></div>
+		</main>
 
-    <!-- Espaço à esquerda -->
-    <div class="panel-left" style="display: flex; align-items: center; gap: 10px;">
-        <img src="img/logoItajai.png" alt="Logo de Itajaí"
-            style="height: 100%; max-height: 40px;" />
-        <span style="padding: 5px 10px; border-radius: 6px; font-weight: bold; color: #343a40; font-size: 16px;">
-            Organograma Institucional
-        </span>
-    </div>
+		<!-- Footer -->
+		<footer class="footer container-fluid" role="navigation">
+			<div class="row">
+				<!-- Esquerda -->
+				<div class="col-sm-4"></div>
 
-    <!-- Espaço central -->
-    <div class="panel-center">
-        <input type="text" placeholder="Pesquisar" class="form-control btn dark-btn search" />
-    </div>
+				<!-- Centro -->
+				<div class="col-sm-4 text-center">
+					<div class="btn-group">
+						<a id="zoomIn" href="#" class="btn btn-default btn-lg" title="Zoom in">
+							<span class="glyphicon glyphicon-zoom-in"></span>
+						</a>
+						<a id="zoomOut" href="#" class="btn btn-default btn-lg" title="Zoom out">
+							<span class="glyphicon glyphicon-zoom-out"></span>
+						</a>
+						<a id="zoomToFit" href="#" class="btn btn-default btn-lg" title="Centralizar">
+							<span class="glyphicon glyphicon-move"></span>
+						</a>
+						<a id="expand" href="#" class="btn btn-default btn-lg" title="Expandir">
+							<span class="glyphicon glyphicon-resize-full"></span>
+						</a>
+						<a id="collapse" href="#" class="btn btn-default btn-lg" title="Comprimir">
+							<span class="glyphicon glyphicon-resize-small"></span>
+						</a>
+						<a id="update" href="#" class="btn btn-default btn-lg" title="Atualizar">
+							<span class="glyphicon glyphicon-refresh"></span>
+						</a>
+					</div>
+				</div>
 
-    <!-- Espaço à direita -->
-    <div class="panel-right">
-        <div class="user-dropdown">
-            <button class="btn dark-btn user-btn" id="userToggle" title="Usuário">
-                <span class="glyphicon glyphicon-user"></span>
-            </button>
+				<!-- Direita -->
+				<div class="col-sm-4 text-right">
+					<div id="one" class="button">
+						<a
+							href="#"
+							class="btn btn-info btn-lg"
+							data-toggle="modal"
+							data-target="#infoModal"
+							title="Ajuda"
+						>
+							<span class="glyphicon glyphicon-info-sign"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-            <div class="dropdown-menu" id="dropdownMenu">
-                <p class="username">Matheus Aveiro</p>
-                <a href="" class="btn dark-btn logout-btn">Voltar para Intranet</a>
-                <a href="" class="btn dark-btn logout-btn">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Container do Organograma -->
-<div class="iframe-container">
-    <div class="iframe-container" id="myDiagramDiv" style="height:100%;">
-    </div>
-</div>
-
-<!-- Painel Inferior de Controles -->
-<div class="container-fluid dark-panel bottom">
-    
-    <!-- Espaço à esquerda -->
-    <div class="panel-left">
-    </div>
-
-    <!-- Espaço central -->
-    <div class="panel-center">
-        <a id="zoomIn" href='javascript:void(0);' class="btn dark-btn" title="Zoom in">
-            <span class="glyphicon glyphicon-zoom-in"></span>
-        </a>
-        <a id="zoomOut" href='javascript:void(0);' class="btn dark-btn" title="Zoom out">
-            <span class="
-            glyphicon glyphicon-zoom-out"></span>
-        </a>
-
-        <a id="zoomToFit" href='javascript:void(0);' class="btn dark-btn" title="Centralizar">
-            <span class="glyphicon glyphicon-move"></span>
-        </a>
-
-        <a id="expand" href='javascript:void(0);' class="btn dark-btn" title="Expandir">
-            <span class="
-            glyphicon glyphicon-resize-full"></span>
-        </a>
-
-        <a id="collapse" href='javascript:void(0);' class="btn dark-btn" title="Comprimir">
-            <span class="glyphicon glyphicon-resize-small"></span>
-        </a>
-
-        <a id="update" href='javascript:location.reload();' class="btn dark-btn" title="Atualizar">
-            <span class="glyphicon glyphicon-refresh"></span>
-        </a>
-    </div>
-
-    <!-- Espaço à direita -->
-    <div class="panel-right">
-        <div id="one" class="button">
-            <a href='javascript:void(0);' class="btn dark-btn" title="Ajuda">
-                <span class="glyphicon glyphicon-info-sign">
-                </span>
-            </a>
-        </div>
-    </div>
-    
-</body>
-
-    <script>
-        const userToggle = document.getElementById('userToggle');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-
-        userToggle.addEventListener('click', () => {
-            dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.user-dropdown')) {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-
-        $('.button').click(function () {
-            var buttonId = $(this).attr('id');
-            $('#modal-container').removeAttr('class').addClass(buttonId);
-            $('body').addClass('modal-active');
-        })
-
-        $('#modal-container').click(function () {
-            $(this).addClass('out');
-            $('body').removeClass('modal-active');
-        });
-
-        function search() {
-            $(document).ready(function () {
-                $.ajax({
-                    type: 'get',
-                    url: "data/fake-data.json",
-                    dataType: 'json',
-                    data: {
-                        "search": $(".search").val()
-                    },
-                    success: function (data) {
-                        load_diagram(data);
-                    },
-                    error: function (error) {
-                        console.error("Erro ao buscar dados do organograma:", error);
-                    }
-                });
-            });
-        }
-
-        start_diagram("myDiagramDiv");
-        search();
-
-        var search_timeout = 0;
-        var last_search = "";
-        $(".search").keyup(e => {
-            clearTimeout(search_timeout);
-
-            if ($(".search").val() != last_search) {
-                search_timeout = setTimeout(function () {
-                    last_search = $(".search").val();
-                    search();
-                    console.log(`Search: ${last_search}`);
-                }, 500);
-            }
-        })
-    </script>
-
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
